@@ -109,11 +109,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionpack-page_caching
+  actionpack-page_caching (= 1.0.2)
   coffee-rails (~> 4.0.0)
-  haml
+  haml (= 4.0.5)
   jbuilder (~> 1.2)
-  jquery-rails
+  jquery-rails (= 3.0.4)
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
   sdoc

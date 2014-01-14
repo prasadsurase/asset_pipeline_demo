@@ -25,5 +25,10 @@ module AssetPipelineDemo
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.assets.paths += ["#{config.root}/vendor/fonts/**", "#{config.root}/vendor/assets/stylesheets/**", "#{config.root}/vendor/assets/javascripts/**"]
+
+    ["#{config.root}/vendor/assets/javascripts", "#{config.root}/vendor/assets/stylesheets", "#{config.root}/vendor/assets/fonts"].each do |d|
+      config.assets.precompile += Dir.glob("#{d}/*").map{|f| "#{f.gsub(d + '/', '')}/**/*" if File.directory?(f)}.compact
+    end
+
   end
 end
